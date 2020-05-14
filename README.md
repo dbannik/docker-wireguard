@@ -1,7 +1,7 @@
 # docker-wireguard
 
 ### run
-    docker run -d --cap-add=NET_ADMIN -p 51820:51820/udp $IMAGE tail -f /dev/null
+    docker run -d --cap-add=NET_ADMIN -p 51820:51820/udp sovich/wireguard tail -f /dev/null
     
 if use custom config
 
@@ -9,7 +9,7 @@ if use custom config
     --cap-add=NET_ADMIN \
     -p 51820:51820/udp \
     -v $(pwd)/wg0.conf:/etc/wireguard/wg0.conf \
-    $IMAGE tail -f /dev/null
+    sovich/wireguard tail -f /dev/null
     
 automatic create configuration example
 
@@ -20,4 +20,4 @@ automatic create configuration example
     -e PRIVATE_KEY=OJG2h44gQjMXZBcfECLfsojwjVs/41kj1Lzhpe5hnlI= \
     -e PUBLIC_KEY=OJG2h44gQjMXZBcfECLfsojwjVs/41kj1Lzhpe5hnlI= \
     -v $(pwd):/etc/wireguard/ \
-    $IMAGE tail -f /dev/null
+    sovich/wireguard tail -f /dev/null
